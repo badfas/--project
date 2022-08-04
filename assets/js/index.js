@@ -1,4 +1,4 @@
-const getUserInfo=()=>{
+function getUserInfo(){
     $.ajax({
         type:'GET',
         url:'/my/userinfo',
@@ -7,7 +7,6 @@ const getUserInfo=()=>{
         //     Authorization:localStorage.getItem('token')
         // },
         success:res=>{
-            console.log(res)
             const {status,message}=res
             if(status !==0) return layer.msg(message)
             renderAvatar(res.data)
